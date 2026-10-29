@@ -1,0 +1,278 @@
+
+/* ==============================
+   VARIABLES GLOBALES
+============================== */
+:root {
+    color-scheme: light;
+    --navy: #173b66;
+    --blue: #2866a6;
+    --pale: #eef4fa;
+    --text: #263445;
+    --muted: #617184;
+}
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+============================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #f3f6fa;
+    color: var(--text);
+    font: 16px/1.65 Arial, Helvetica, sans-serif;
+}
+
+/* ==============================
+   BARRA SUPERIOR
+============================== */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px max(20px, calc((100% - 1000px) / 2));
+    background: var(--navy);
+    color: white;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* ==============================
+   BOTÓN DE INSTALACIÓN
+============================== */
+.install-button {
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    background: white;
+    color: var(--navy);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.install-button:hover {
+    background: #e3edf8;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+.container {
+    width: min(1000px, calc(100% - 32px));
+    margin: 28px auto;
+}
+
+/* ==============================
+   TARJETAS Y SECCIONES
+============================== */
+.hero,
+.section,
+.install-note {
+    background: white;
+    border: 1px solid #e0e7ef;
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 12px #1a36550b;
+}
+
+/* ==============================
+   ENCABEZADO PRINCIPAL
+============================== */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    border-top: 5px solid var(--blue);
+}
+
+.initials {
+    flex: 0 0 92px;
+    width: 92px;
+    height: 92px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--pale);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--blue);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+h1 {
+    margin: 3px 0;
+    color: var(--navy);
+    font-size: clamp(27px, 4vw, 38px);
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin: 6px 0;
+    font-size: 18px;
+}
+
+.contact,
+.meta {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 3px 0;
+    overflow-wrap: anywhere;
+}
+
+/* ==============================
+   TÍTULOS Y TEXTOS
+============================== */
+h2 {
+    margin: 0 0 14px;
+    color: var(--navy);
+    font-size: 21px;
+    border-bottom: 1px solid #e5ebf2;
+    padding-bottom: 8px;
+}
+
+h3 {
+    margin: 0 0 3px;
+    font-size: 17px;
+}
+
+.section p {
+    margin-top: 6px;
+}
+
+/* ==============================
+   ELEMENTOS Y LISTAS
+============================== */
+.item + .item {
+    margin-top: 20px;
+    padding-top: 17px;
+    border-top: 1px solid #edf0f4;
+}
+
+ul {
+    padding-left: 22px;
+    margin: 8px 0 0;
+}
+
+li {
+    margin: 4px 0;
+}
+
+/* ==============================
+   ETIQUETAS Y HABILIDADES
+============================== */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.chips span {
+    background: var(--pale);
+    color: var(--navy);
+    border-radius: 20px;
+    padding: 6px 11px;
+    font-size: 14px;
+}
+
+/* ==============================
+   DISEÑO EN DOS COLUMNAS
+============================== */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* ==============================
+   AVISO DE INSTALACIÓN
+============================== */
+.install-note {
+    background: #edf6ff;
+    border-color: #cfe2f5;
+}
+
+.install-note p {
+    margin-bottom: 0;
+}
+
+/* ==============================
+   MENSAJE SIN CONEXIÓN
+============================== */
+.offline-message {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==============================
+   PIE DE PÁGINA
+============================== */
+footer {
+    padding: 22px 16px;
+    background: #e8eef5;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==============================
+   ELEMENTOS OCULTOS
+============================== */
+[hidden] {
+    display: none !important;
+}
+
+/* ==============================
+   DISEÑO RESPONSIVO
+   CELULARES Y PANTALLAS PEQUEÑAS
+============================== */
+@media (max-width: 650px) {
+    .topbar {
+        padding: 12px 16px;
+    }
+
+    .container {
+        width: calc(100% - 20px);
+        margin: 14px auto;
+    }
+
+    .hero {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 21px;
+    }
+
+    .section,
+    .install-note {
+        padding: 20px;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .install-button {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+}
